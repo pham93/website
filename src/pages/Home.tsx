@@ -1,5 +1,4 @@
 import { motion } from "framer-motion"
-import { Link } from "react-router-dom"
 import Experience from "../components/sections/Experience"
 import Projects from "../components/sections/Projects"
 import Skills from "../components/sections/Skills"
@@ -58,22 +57,7 @@ export default function Home() {
 
             <div id="experience"><Experience /></div>
             <div id="skills"><Skills /></div>
-            <div id="projects"><Projects /></div>
-
-            <section className="mt-32 pb-16">
-                <div className="bg-primary/5 border border-primary/10 rounded-3xl p-12 text-center flex flex-col items-center">
-                    <h2 className="text-3xl font-bold mb-4">Let's Work Together</h2>
-                    <p className="text-muted-foreground mb-8 max-w-[500px]">
-                        Have an idea or a project in mind? Let's discuss how we can build something amazing.
-                    </p>
-                    <Link
-                        to="/contact"
-                        className="inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-12 px-8 py-2 gap-2"
-                    >
-                        Get In Touch <ArrowRight className="w-4 h-4" />
-                    </Link>
-                </div>
-            </section>
+            <div id="projects" className="pb-24"><Projects /></div>
         </div>
     )
 }

@@ -1,5 +1,5 @@
-import { Outlet } from "react-router-dom"
-import { Github, Linkedin, Mail, Home, Folder, Briefcase, Wrench, Edit } from "lucide-react"
+import { Outlet, Link } from "react-router-dom"
+import { Github, Linkedin, Mail, Home, Folder, Briefcase, Wrench, Edit, ArrowRight } from "lucide-react"
 import { ModeToggle } from "../mode-toggle"
 
 export default function MainLayout() {
@@ -42,7 +42,7 @@ export default function MainLayout() {
 
                 {/* Sticky Sidebar */}
                 <aside className="w-full xl:w-[380px] shrink-0">
-                    <div className="xl:sticky xl:top-12 bg-card border border-border/50 rounded-[2rem] p-8 flex flex-col items-center text-center dark:shadow-2xl relative overflow-hidden">
+                    <div className="xl:sticky xl:top-12 bg-card border border-border/50 rounded-[2rem] p-8 min-h-[700px] flex flex-col items-center text-center dark:shadow-2xl relative overflow-hidden">
                         {/* Decorative background element */}
                         <div className="absolute top-0 right-0 -mr-16 -mt-16 w-48 h-48 bg-primary/10 rounded-full blur-3xl z-0 pointer-events-none" />
 
@@ -58,19 +58,34 @@ export default function MainLayout() {
 
                         <h2 className="text-3xl font-bold tracking-tight relative z-10">Loc Pham</h2>
                         <p className="text-muted-foreground mt-4 text-sm relative z-10 leading-relaxed font-medium">
-                            Software engineer with seven years of experience in full-stack development and system architecture.
+                            Software engineer with 8 years of experience in full-stack development and system architecture.
                         </p>
 
-                        <div className="flex gap-4 mt-8 relative z-10">
-                            <a href="mailto:gitloc2016@gmail.com" className="p-3 bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors rounded-full text-secondary-foreground">
-                                <Mail className="w-5 h-5" />
-                            </a>
-                            <a href="https://github.com/pham93" target="_blank" rel="noreferrer" className="p-3 bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors rounded-full text-secondary-foreground">
-                                <Github className="w-5 h-5" />
-                            </a>
-                            <a href="#" className="p-3 bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors rounded-full text-secondary-foreground">
-                                <Linkedin className="w-5 h-5" />
-                            </a>
+                        <div className="mt-auto w-full pt-8 flex flex-col items-center relative z-10">
+                            <div className="w-full h-px bg-border/50 mb-8" />
+                            
+                            <div className="flex gap-4 mb-8">
+                                <a href="mailto:gitloc2016@gmail.com" className="p-3 bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors rounded-full text-secondary-foreground">
+                                    <Mail className="w-5 h-5" />
+                                </a>
+                                <a href="https://github.com/pham93" target="_blank" rel="noreferrer" className="p-3 bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors rounded-full text-secondary-foreground">
+                                    <Github className="w-5 h-5" />
+                                </a>
+                                <a href="https://www.linkedin.com/in/loc-pham-571a68140/" target="_blank" rel="noreferrer" className="p-3 bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors rounded-full text-secondary-foreground">
+                                    <Linkedin className="w-5 h-5" />
+                                </a>
+                            </div>
+
+                            <h3 className="text-xl font-bold mb-2">Let's work together!</h3>
+                            <p className="text-sm text-muted-foreground font-medium mb-6 text-center">
+                                I'm currently available for freelance projects and new opportunities.
+                            </p>
+                            <Link
+                                to="/contact"
+                                className="w-full relative z-10 inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-bold uppercase tracking-wider ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-8 py-2 gap-2"
+                            >
+                                Get In Touch <ArrowRight className="w-4 h-4" />
+                            </Link>
                         </div>
                     </div>
                 </aside>
