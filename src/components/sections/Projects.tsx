@@ -20,12 +20,12 @@ const projects = [
         images: ["/tradertrade_01.png", "/tradertrade_02.png", "/tradertrade_03.png"]
     },
     {
-        title: "Yanta (Yet Another NoteTaking App)",
-        description: "Built a note-taking application similar to Notion with integrated AI LLM features to assist in productivity and organization.",
-        link: null,
-        github: "https://github.com/pham93/Yanta",
-        tags: ["AI", "LLM", "React", "Fullstack"],
-        images: []
+        title: "MapWiki",
+        description: "Exploring cities with an interactive map",
+        link: "https://mapwiki.pages.dev/",
+        github: null,
+        tags: ["React", "OpenLayers", "MapTiler"],
+        images: ["/mapwiki_01.png"]
     }
 ]
 
@@ -80,7 +80,7 @@ function ProjectCard({ project, index }: { project: any, index: number }) {
             {/* Background / Image Carousel */}
             {project.images && project.images.length > 0 ? (
                 <AnimatePresence initial={false}>
-                    <motion.div 
+                    <motion.div
                         key={currentImage}
                         initial={{ x: "-100%", opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
@@ -95,7 +95,7 @@ function ProjectCard({ project, index }: { project: any, index: number }) {
                 </AnimatePresence>
             ) : (
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 group-hover:scale-105 transition-transform duration-700">
-                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
                 </div>
             )}
 
@@ -117,7 +117,7 @@ function ProjectCard({ project, index }: { project: any, index: number }) {
                 <div className="flex gap-4 mt-2">
                     {project.link && (
                         <span className="flex items-center gap-2 text-sm font-bold text-white group-hover:text-primary transition-colors">
-                            <ExternalLink className="w-4 h-4" /> Live Demo
+                            <ExternalLink className="w-4 h-4" /> Visit Site
                         </span>
                     )}
                     {project.github && (
