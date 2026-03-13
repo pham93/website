@@ -58,11 +58,13 @@ function ProjectCard({ project, index }: { project: any, index: number }) {
 
     useEffect(() => {
         if (!project.images || project.images.length <= 1) return;
+        // offset the interval for each project so animations are not perfectly in sync
+        const intervalTime = 5000 + (index * 1500);
         const interval = setInterval(() => {
             setCurrentImage(prev => (prev + 1) % project.images.length)
-        }, 5000)
+        }, intervalTime)
         return () => clearInterval(interval)
-    }, [project.images])
+    }, [project.images, index])
 
     const targetLink = project.link || project.github || "#"
 
